@@ -21,7 +21,7 @@ The CLI extension is compatible **only** with the Amplify CLI **version 1.4** (<
 
 The Amplify Central CLI includes the following enhancements:
 
-* 
+*
 
 ### Amplify Central WebUI
 
@@ -29,7 +29,7 @@ The Amplify Central WebUI is used by both the API providers and consumers to man
 
 The Amplify Central WebUI includes the following enhancements:  
 
-* 
+*
 
 ### Axway Edge Gateway / AWS / Azure agents
 
@@ -37,7 +37,7 @@ To provide better visibility into your multi-type gateway eco system, two sets o
 
 The agents include the following enhancements:
 
-* 
+*
 
 ### Mesh governance
 
@@ -45,13 +45,13 @@ Amplify Central mesh governance enables you to govern and manage your APIs, publ
 
 Mesh governance includes the following enhancements:
 
-* 
+*
 
 ## Fixed issues
 
 The following issues were fixed in this version of Amplify Central:
 
-* 
+*
 
 ## Known limitations
 
@@ -59,16 +59,16 @@ This version of Amplify Central has the following limitations:
 
 * API Observer:
 
-    *   
+    *
 
 * Axway Edge Gateway agents:
 
-    * 
+    *
 
 * AWS Gateway agents:
 
-    * 
+    *
 
 * Azure agents:
 
-    * 
+    *
