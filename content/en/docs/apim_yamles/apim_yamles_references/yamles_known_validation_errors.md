@@ -240,17 +240,6 @@ You might see this in the `yamles` trace file at validation time because the val
 
 Look into the file named `/home/user/yaml/External Connections/DB Connections/MySQL.yaml`. It contains an entity of type `DbConnection`, named `local`, with a field named `setPoolPreparedStatements`. Its value is set to `truex`, but a boolean is expected by the model. Fix the field value to be an valid boolean (`true` or `false`). The value defaults to `false`.
 
-## Entities of different types at same level with same PK
-
-**Severity**: WARNING
-
-```
-WARNING: Found entities of different types at same level with same PK for parent PK :'/Path/to/parent' PK end with: (EntityTypeA)MyEntityName
-WARNING: Found entities of different types at same level with same PK for parent PK :'/Path/to/parent' PK end with: (EntityTypeB)MyEntityName
-```
-
-These errors could be generated at conversion time using the `fed2yaml` or `frag2yaml` options if the original XML has entities of different types at the same level with the same PK. To fix after converting, edit the YAML files so that the entities have different values for their key field(s). In general this means editing the `name` field if `name` is the only key field for the entity, and the YAML file name.
-
 ## Filter with same name
 
 **Severity**: WARNING

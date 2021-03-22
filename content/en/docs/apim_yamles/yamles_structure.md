@@ -376,7 +376,7 @@ def invoke(msg)         {
 }
 ```
 
-### Limitations
+### Precautions
 
 YamlPK is not an immutable key, it is a concatenation of all the parent key fields and child key fields. This has two consequences:
 
@@ -398,8 +398,24 @@ fields:
 name: Filter Database IP
 ```
 
-It now has a YamlPK of `/Policies/App Policies/Core Policy/Filter Database IP`. This means that all other entities pointing to this policy through a reference field must be changed to reflect this.
+It now has a YamlPK of `/Policies/App Policies/Core/Filter Database IP`. This means that all other entities pointing to this policy through a reference field must be changed to reflect this.
 
-**Two or more entities at the same level in the hierarchy should not have the same key field value regardless of their types**: This was allowed for entities of different types in the XML federated configuration, but is not allowed in the YAML configuration regardless of the types. This limitation allows the YamlPk form to stay as simple as possible by avoiding inclusion of type information.
+If you are using the `EntityStore` API, then all of that is handled internally and referring entities will be updated.
 
-See [Known conversion errors](/docs/apim_yamles/apim_yamles_references/yamles_known_conversion_errors/) for details.
+**Two or more entities with the same key fields at the same level in the hierarchy**:
+
+In that case the YamlPK has is a little bit different.
+
+For instance if you have:
+
+* `/Policies/App Policies/Core`: a policy
+* `/Policies/App Policies/Core`: (container other policy)
+* `/Policies/App Policies/Core/Throttling`: a policy
+
+There a conflict, YAML Entity store handle by setting their respective YamlPK to:
+
+* `/Policies/App Policies/(FilterCircuit)Core`
+* `/Policies/App Policies/(CircuitContainer)Core`
+* `/Policies/App Policies/(CircuitContainer)Core/Throttling`
+
+If you want to refer to `Throttling` you must use `/Policies/App Policies/(CircuitContainer)Core/Throttling`.
