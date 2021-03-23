@@ -400,7 +400,8 @@ name: Filter Database IP
 
 It now has a YamlPK of `/Policies/App Policies/Core/Filter Database IP`. This means that all other entities pointing to this policy through a reference field must be changed to reflect this.
 
-If you are using the `EntityStore` API, then all of that is handled internally and referring entities will be updated.
+If you are using the `EntityStore` API, in case an entity's YamlPK is altered due to a change in any of its key fields, all referring entities are automatically updated to reflect the change.
+ 
 
 **Two or more entities with the same key fields at the same level in the hierarchy**:
 
