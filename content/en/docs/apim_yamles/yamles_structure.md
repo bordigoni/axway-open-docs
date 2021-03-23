@@ -401,7 +401,6 @@ name: Filter Database IP
 It now has a YamlPK of `/Policies/App Policies/Core/Filter Database IP`. This means that all other entities pointing to this policy through a reference field must be changed to reflect this.
 
 If you are using the `EntityStore` API, in case an entity's YamlPK is altered due to a change in any of its key fields, all referring entities are automatically updated to reflect the change.
- 
 
 **Two or more entities with the same key fields at the same level in the hierarchy**:
 
@@ -410,10 +409,10 @@ In this case the YamlPK is formed differently to avoid ambiguity.
 For instance if you have:
 
 * `/Policies/App Policies/Core`: a policy
-* `/Policies/App Policies/Core`: (container other policy)
+* `/Policies/App Policies/Core`: container for other policies
 * `/Policies/App Policies/Core/Throttling`: a policy
 
-There a conflict, YAML Entity store handle by setting their respective YamlPK to:
+There a conflict, YAML Entity Store handle by adding the entity type to the respective YamlPK:
 
 * `/Policies/App Policies/(FilterCircuit)Core`
 * `/Policies/App Policies/(CircuitContainer)Core`
