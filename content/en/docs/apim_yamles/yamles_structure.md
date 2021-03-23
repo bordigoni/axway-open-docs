@@ -405,7 +405,7 @@ If you are using the `EntityStore` API, in case an entity's YamlPK is altered du
 
 **Two or more entities with the same key fields at the same level in the hierarchy**:
 
-In that case the YamlPK has is a little bit different.
+In this case the YamlPK is formed differently to avoid ambiguity.
 
 For instance if you have:
 
