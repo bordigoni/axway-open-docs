@@ -34,13 +34,6 @@ When an entity store is edited via ES Explorer or the entity store API, some fie
 * You can view and edit the YAML configuration fragment in ES Explorer.
 * It is not yet possible to import or export YAML configuration fragments in ES Explorer, this can only be done using the `yamles` CLI.
 
-## Certificate
-
-* Private keys are in external files in DER format.
-* Certificates are in external files in PEM format. The PEM header and footer lines removed.
-
-There is no support for either DER or PEM formats.
-
 ## API Manager
 
 The YAML format supports API Manager. However, is not possible to run `setup-apimanager` on an API Gateway instance that has a YAML configuration deployed to it. To workaround this limitation:
